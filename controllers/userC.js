@@ -53,13 +53,43 @@ router.post(('/sessions'),(req, res) => {
 
 //============================================//
 
+//================Freelancer Profile============
+
+router.get("/profile", (req, res) => {
+  console.log("From Login/Signup req.session.userId: ", req.session.userId);
+  User.findOne({ _id: req.session.userId })
+    .then((currentUser) => {
+      res.render("profile", { user: currentUser });
+    })
+    .catch((err) => console.log("Error: User not found ", err));
+});
+//================Seeker Profile============
+router.get("/SeekerProfile", (req, res) => {
+  console.log("From Login/Signup req.session.userId: ", req.session.userId);
+  User.findOne({ _id: req.session.userId })
+    .then((currentUser) => {
+      res.render("SeekerProfile", { user: currentUser });
+    })
+    .catch((err) => console.log("Error: User not found ", err));
+});
+router.use("/protected-profile", (err, req, res, next) => {
+  console.log(err);
+  res.redirect("/login");
+});
+
+//======================main 
 router.get('/main' , (req,res) =>{
 
   res.render('main' , {user: null})
 
 })
 
-
+//================Sign out=============
+router.get("/logout" ,(req, res) => {
+  req.session.userId = null;
+  res.redirect("/main");
+  
+})
 
 function checkSignIn(req, res, next) {
     // if the user is logged in, just go onto the router with the netxt() keyword
