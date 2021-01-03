@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css/new_ticket.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body class="flex">
+    <form action="/new_ticket_tk" class="flex" method="POST">
+    
+        <label for="subject" id="label-subject">Subject:</label>
+        <input type="text" name="subject" id="tiket-input-subject">
+        <textarea id="tiket-d" name="description" cols="50" rows="10"></textarea>
+
+        <label for="image" id="label-img" >Image:</label>
+        <input type="text" id="tiket-input-img" name="img">
+        <input type="submit" value="confirm" id="tiket-button">
+    </form>
+   
+</body>
+</html>
