@@ -32,11 +32,11 @@
 
        
        <h2>
-           <% if (user === null){ %>
+           <% if (idUser === null){ %>
             <a href="/login">Log in</a>
            <% }else{ %>
 
-              <%= user.name %>
+              <%= idUser.name %>
 
            <% } %>
            
@@ -56,26 +56,41 @@
 
     <div class="contanier flex">
 
-        <% if (!user === null){ %>
-        <% if ((parseInt(user.type)) === 0){ %>
+   
+        <% if ((parseInt(idUser.type)) === 0){ %>
             <div class="nav flex">
-                <button>New Sub</button>
-                <button>My Order</button>
-            </div>
+                <form action="/new_ticket">
+                    <input type="submit" value="New Post" />
+                </form>
+                
+                <form action="/signup">
+                    <input type="submit" value="Go to Google" />
+                </form>
                    <% } %>
-                   <% } %>
+        
              
         
         </div>
         <div class="tickets-container">
-       
-            <div>
-                <h1>Title</h1>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa odit dolorum error laboriosam iure reprehenderit facere fugiat dicta, officiis laborum itaque placeat nobis tenetur repudiandae libero vitae sequi explicabo velit!</p>
-                <img src="" alt="">
 
+ 
+              <% data.forEach((element) => { %>
+                  
+             
+            <div class="ticket">
+                <div>
+                <a href="/show_ticket/<%= element._id%>/"><h1><%=element.subject%></h1></a>
+                <p><%=element.description%></p>
+                <p><%=element.user.name%></p>
+                
+               
+                <img src="" alt="">
+            </div>
 
             </div>
+            <% }); %>
+
+
         </div>
     </div>
      

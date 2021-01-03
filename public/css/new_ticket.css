@@ -1,0 +1,36 @@
+.flex{
+    display: flex;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+body form {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: palegoldenrod;
+    padding: 5%;
+    width: 80%;
+}
+
+body form #tiket-d{
+    
+    width: 100%;
+    height: 500px;
+    margin: 20px 0;
+}
+
+body form #label-img{
+    margin-bottom: 20px;
+}
+
+body form #tiket-input-img{
+    margin-bottom: 20px;
+}
+
+body form #tiket-input-subject{
+    margin-top: 10px;
+}

@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router()
 var User = require("../models/userM");
+var Ticket = require("../models/ticketsM");
 const session = require("express-session")
 const mongoSessisonStore = require("connect-mongo")(session);
 const validator = require("express-validator");
@@ -13,7 +14,7 @@ router.use(
       saveUninitialized: true,
       resave: true,
       secret: "Epslion's super secret",
-      cookie: { maxAge: 30 * 60 * 1000 },
+      cookie: { maxAge: 30 * 24 * 60 * 60 * 1000 },
     })
 );
 
@@ -29,7 +30,11 @@ router.get('/login' , (req,res) =>{
 //=====================================//
 
 //========= Log In Form Action =========//
-router.post(('/sessions'),(req, res) => {
+router.post(('/sessions')
+
+
+
+,(req, res) => {
 
     User.authenticate(
         req.body.email,
@@ -42,7 +47,9 @@ router.post(('/sessions'),(req, res) => {
          
         } else {
           req.session.userId = user._id;
-          res.render("main", { user , id: req.session.userId });
+          req.session.user = user;
+          console.log("session: ",req.session)
+          res.redirect("/main");
         
         }
       });
@@ -79,8 +86,11 @@ router.use("/protected-profile", (err, req, res, next) => {
 
 //======================main 
 router.get('/main' , (req,res) =>{
+      Ticket.find().populate('user')
+        .then((allTicket)=>{
+            res.render('main' , {data: allTicket , idUser: req.session.user})
 
-  res.render('main' , {user: null})
+        }).catch(err=> {console.log(err)})
 
 })
 
@@ -127,7 +137,6 @@ router.get('/signup' , (req,res) =>{
 })
 
 router.post('/users' ,(req, res) => {
-    console.log("req.body.type:  ",req.body.type)
     User.createSecure(
         req.body.name,
         req.body.email,

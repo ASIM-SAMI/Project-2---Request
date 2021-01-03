@@ -29,7 +29,7 @@ app.use(express.urlencoded({ extended: true }));
   
   // controllers
 app.use(require('./controllers/userC'))
-//app.use(require('./controllers/ticketsC'))
+app.use(require('./controllers/ticketsC'))
 //app.use(require('./controllers/commentC'))
 
 

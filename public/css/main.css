@@ -73,15 +73,25 @@ background-color: #d4f1c1;
 
     }
 
-.tickets-container{
+.tickets-container {
     background-color: white;
     flex-grow: 10;
     
 }
 
-.body-container{
- width: 100%;
- height: 400px;
- background-color: red;
+
+
+.tickets-container .ticket{
+    margin: 2%;
+    background-color: #AEF3F8;
+    width: 97%;
+    height: 180px;
+    overflow: hidden;
 }
+.tickets-container .ticket h1{
+    font-size: 1.1em;
+
+}
+
+
 
