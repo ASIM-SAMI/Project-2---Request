@@ -1,0 +1,32 @@
+<head>
+    <!--- <link rel="stylesheet" href="css/style.css">-->
+   
+</head>
+<div class="form_conianer">
+    <form action="/users" class="form" method="POST">
+        <h2> Sign Up</h2>
+    <label for="name"> Name</label>
+    <input type="text" name="name" class="form__input__text" placeholder="Name">   
+    <br>
+    <label for="email"> Email</label>
+    <input type="text" name="email" class="form__input__text" placeholder="Email">
+    <br>
+    <label for="password"> Password</label>
+    <input type="password" name="password" class="form__input__text"  placeholder="your password">  
+    <br>
+    <br>
+    <label for="userType"> User Type : </label>
+    <input type="radio" id="seeker" name="type" value="0">
+    <label for="seeker"> Seeker</label>
+    <input type="radio" id="freelancer" name="type" value="1">
+    <label for="freelancer"> Freelancer</label><br>
+
+    
+    <input type="submit" value="Sing Up" class="form__input__submit">
+    </form>
+
+
+    <p>u alredy have account ? </p> <br>
+    <a href="/login"> log in</a>
+    
+</div>

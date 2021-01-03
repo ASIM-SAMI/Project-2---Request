@@ -1,0 +1,81 @@
+.flex{
+    display:flex;
+}
+
+body{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    flex-direction: column;
+
+}
+.header{
+    flex-direction: row-reverse;
+    background-color: wheat;
+
+}
+
+.section{
+    background-color: #E8E8E7;
+    
+}
+.category{
+  
+    background-color: lightblue;
+    flex-grow: 1;
+    flex-direction: column;
+
+}
+
+.category button{
+    height: 100px;
+}
+
+
+.section .contanier{
+    flex-grow: 3;
+}
+.header img{
+
+    width: 100px;
+    height: 100px;
+  
+}
+
+.header h1{
+
+    margin-right: 50%;
+}
+
+.footer{
+    background-color: wheat;
+}
+
+.contanier{
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 10px
+}
+
+.contanier .nav{
+flex-direction: column;
+flex-grow: 1;
+margin-bottom: 10px;
+background-color: #d4f1c1;
+}
+
+.contanier .nav button{
+    width: 200px;
+}
+
+.contanier .tickets{
+    background-color: white;
+
+    }
+
+.tickets-container{
+    background-color: white;
+    flex-grow: 10;
+    
+}
+
