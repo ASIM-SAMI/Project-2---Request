@@ -18,3 +18,8 @@ $("#lastSub").removeClass("content");
 $("#info").addClass("content");
    $("#feedBack").addClass("content");
 });
+
+
+$(".back-to-home").on("click" , ()=>{
+   location.href = "main";
+})

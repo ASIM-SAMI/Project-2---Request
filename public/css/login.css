@@ -1,0 +1,10 @@
+.login,
+.image {
+    min-height: 100vh
+}
+
+.bg-image {
+    background-image: url('https://www.dissolve.com.au/wp-content/uploads/2018/08/blog-img.jpg');
+    background-size: cover;
+    background-position: center center
+}
