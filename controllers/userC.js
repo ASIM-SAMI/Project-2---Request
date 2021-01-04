@@ -71,49 +71,59 @@ router.get("/profile", (req, res) => {
     .catch((err) => console.log("Error: User not found ", err));
 });
 //================Seeker Profile============
-router.get("/SeekerProfile", (req, res) => {
+router.get("/EditProfile", (req, res) => {
   console.log("From Login/Signup req.session.userId: ", req.session.userId);
   User.findOne({ _id: req.session.userId })
     .then((currentUser) => {
-      res.render("SeekerProfile", { user: currentUser });
+      res.render("EditProfile", { user: currentUser });
     })
     .catch((err) => console.log("Error: User not found ", err));
 });
+//==============
 router.use("/protected-profile", (err, req, res, next) => {
   console.log(err);
-  res.redirect("/login");
+  res.redirect("/logIn");
 });
 
 ///=======================Edit Profile ===============
 
 
 // update action
-router.put("/EditProfile/:id", (req, res) => {
-  //const id = req.params.id;
-  let updateUserProfile = {
-      name: req.body.name,
-      email: req.body.email,
-      passwordDigest: "111",
-      img: "https://ubisoft-avatars.akamaized.net/a3c1a636-db47-4751-941b-1acc538932de/default_256_256.png",
-      type: "1"
-  };
-  User.findByIdAndUpdate({ _id: req.session.userId }, updateUserProfile)
-      .then(() => {
-          res.redirect('/main');
-      }).catch(err => console.log(err))
+router.post("/EditProfile", (req, res) => {
+    const id = req.params.id;
+    let updateUserProfile = {
+        name: req.body.name,
+        email: req.body.email
+    };
+    console.log("Updated Profile "+updateUserProfile)
+    User.findByIdAndUpdate(req.session.userId, updateUserProfile)
+        
+      .then((user) => {
+        res.render("profile", { user });
 
+        
+  }).catch((err) => console.log("Error: User not found ", err));
 
 });
-
 //====================== Main 
 router.get('/main' , (req,res) =>{
       Ticket.find().populate('user')
         .then((allTicket)=>{
-            res.render('main' , {data: allTicket , idUser: req.session.user})
-
+            res.render('main' , {data: allTicket , idUser: req.session.user , myOrder : 0 })
         }).catch(err=> {console.log(err)})
-
 })
+
+///==================filter teiket by category ===========
+router.get('/main/:category' , (req,res) =>{
+
+  Ticket.find({category: req.params.category}).populate('user')
+    .then((allTicket)=>{
+        res.render('main' , {data: allTicket , idUser: req.session.user})
+    }).catch(err=> {console.log(err)})
+}) 
+
+///==================filter teiket by category ===========
+
 
 //================Sign out=============
 router.get("/logout" ,(req, res) => {

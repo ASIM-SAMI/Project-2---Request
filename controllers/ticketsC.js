@@ -23,7 +23,9 @@ router.post('/new_ticket_tk' ,(req, res) => {
         subject: req.body.subject,
         img: req.body.img,
         description: req.body.description,
+        category: req.body.category,
         user: req.session.userId
+        
     }
     Ticket.create(newTicket)
     .then(newUser =>{

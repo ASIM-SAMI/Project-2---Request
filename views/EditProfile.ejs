@@ -53,26 +53,25 @@
                         <h6 class="text-right">Edit Profile</h6>
                       </div>
                
-                    <form action="main/<%= user._id %>?_method=put" method="POST"></form>
+                    <form action="/EditProfile" method="POST">
                     <div class="row mt-2">
                         <div class="col-md-6">
                           <label class="labels">Name : </label>
-                        <input type="text" class="form-control" placeholder="name" value="<%=user.name%>"></div>  
+                        <input type="text" class="form-control" placeholder="name" name ="name" value="<%=user.name%>"></div>  
                     </div>
                     <div class="row mt-3">
                         <div class="col-md-6">
                           <label class="labels">Email : </label>
-                          <input type="text" class="form-control" placeholder="Email" value="<%=user.email%>"></div>
+                          <input type="text" class="form-control" 
+                          name ="email"placeholder="Email" value="<%=user.email%>"></div>
                     </div>
                     <div class="row mt-3">
                       <div class="col-md-6">
                         <label class="labels">Password : </label>
-                        <input type="password" class="form-control" value="<%=user.passwordDigest%>" placeholder="Phone number"></div>
+                        <input type="password" class="form-control"
+                         value="<%=user.passwordDigest%>" placeholder="Phone number"></div>
                   </div>
-                    <div class="row mt-3">
-                        <div class="col-md-6"><input type="text" class="form-control" placeholder="Bank Name" value="Bank of America"></div>
-                    </div>
-                    <div class="mt-5 text-right"><button class="btn btn-primary profile-button" type="button">Save Profile</button></div>
+                    <div class="mt-5 text-right"><input class="btn btn-primary profile-button" type="submit" value="Save Profile"></div>
                   </form>
                 </div>
             </div>

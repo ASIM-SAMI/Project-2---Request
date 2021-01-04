@@ -12,6 +12,7 @@
         <!-- ==== Name of User ==== -->
         <% if (user && user.email) { %>
         <h1>Hi <%= user.name %></h1>
+        <a href="/EditProfile"> Edit Profile</a>
     <hr>
             <% } else { %>
               You're not logged in. </h2>
