@@ -12,12 +12,10 @@
         <!-- ==== Name of User ==== -->
         <% if (user && user.email) { %>
         <h1>Hi <%= user.name %></h1>
+        <p><%= user.bio %></p>
         <a href="/EditProfile"> Edit Profile</a>
     <hr>
-            <% } else { %>
-              You're not logged in. </h2>
-              <a href="/logIn">Log in</a>
-            <% } %>
+          
       </div>
        <!-- ==== Profile Buttons ==== -->
     <div class="topnav">
@@ -27,8 +25,7 @@
           </div>
           <div id = "info" class = "content">
               <h2>Heading</h2>
-              <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac ex vulputate, tempor quam non, ullamcorper est.
-                Phasellus faucibus porta tortor, vel lacinia leo dapibus at. In fringilla porta ipsum, quis vulputate nunc dictum vel. Etiam sodales aliquam bibendum.</h3>
+              <h3><%= user.heading %></h3>
           </div>
         <div id = "feedBack" class = "content">
             <h2>Name</h2>
@@ -42,6 +39,11 @@
             <h2>Title Sub</h2>
             <h3>Type:</h3>
         </div>
+
+        <% } else { %>
+            You're not logged in. </h2>
+            <a href="/logIn">Log in</a>
+          <% } %>
     <!-- Scripts -->
   
 </body>

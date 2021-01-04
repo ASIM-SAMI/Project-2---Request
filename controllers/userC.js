@@ -48,6 +48,7 @@ router.post(('/sessions')
         } else {
           req.session.userId = user._id;
           req.session.user = user;
+          console.log(user)
           console.log("session: ",req.session)
           res.redirect("/main");
         
@@ -93,7 +94,9 @@ router.post("/EditProfile", (req, res) => {
     const id = req.params.id;
     let updateUserProfile = {
         name: req.body.name,
-        email: req.body.email
+        email: req.body.email,
+        heading: req.body.heading,
+        bio: req.body.bio
     };
     console.log("Updated Profile "+updateUserProfile)
     User.findByIdAndUpdate(req.session.userId, updateUserProfile)
@@ -107,10 +110,20 @@ router.post("/EditProfile", (req, res) => {
 });
 //====================== Main 
 router.get('/main' , (req,res) =>{
-      Ticket.find().populate('user')
+  if(req.query.myorder){
+    Ticket.find({user: req.session.userId}).sort({'updatedAt': -1}).populate('user').exec()
+    .then((allTicket)=>{
+        res.render('main' , {data: allTicket , user: req.session.user , search: true} )
+
+    }).catch(err=> {console.log(err)})
+  }else{
+      Ticket.find().sort({'updatedAt': -1}).populate('user').exec()
+
         .then((allTicket)=>{
-            res.render('main' , {data: allTicket , idUser: req.session.user , myOrder : 0 })
+            res.render('main' , {data: allTicket , user: req.session.user, search: false })
+
         }).catch(err=> {console.log(err)})
+      }
 })
 
 ///==================filter teiket by category ===========
@@ -118,18 +131,17 @@ router.get('/main/:category' , (req,res) =>{
 
   Ticket.find({category: req.params.category}).populate('user')
     .then((allTicket)=>{
-        res.render('main' , {data: allTicket , idUser: req.session.user})
+        res.render('main' , {data: allTicket , user: req.session.user , search: false })
     }).catch(err=> {console.log(err)})
 }) 
 
-///==================filter teiket by category ===========
 
 
 //================Sign out=============
 router.get("/logout" ,(req, res) => {
   req.session.userId = null;
   req.session.user= null;
-  res.redirect("/main");
+  res.redirect("/logIn");
   
 })
 

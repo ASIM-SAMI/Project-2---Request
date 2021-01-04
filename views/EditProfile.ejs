@@ -70,6 +70,18 @@
                         <label class="labels">Password : </label>
                         <input type="password" class="form-control"
                          value="<%=user.passwordDigest%>" placeholder="Phone number"></div>
+
+                         <div class="col-md-6">
+                          <label class="labels">Bio : </label>
+                          <input type="text" 
+                          name ="bio" class="form-control"
+                           value="<%=user.bio%>" placeholder="User Bio"></div>
+
+                           <div class="col-md-6">
+                            <label class="labels">Heading : </label>
+                            <input type="text" 
+                            name ="heading" class="form-control"
+                             value="<%=user.bio%>" placeholder="heading"></div>
                   </div>
                     <div class="mt-5 text-right"><input class="btn btn-primary profile-button" type="submit" value="Save Profile"></div>
                   </form>

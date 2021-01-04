@@ -5,8 +5,8 @@ const Schema = mongoose.Schema;
 const CommentSchema = new Schema({
   description: String,
   status : String ,
-  user : {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
-
+  user : {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
+  ticket : {type: mongoose.Schema.Types.ObjectId, ref: 'Ticket'}
 });
 
 var Comment = mongoose.model("Comment", CommentSchema);
