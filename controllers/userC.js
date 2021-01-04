@@ -48,6 +48,7 @@ router.post(('/sessions')
         } else {
           req.session.userId = user._id;
           req.session.user = user;
+          console.log(user)
           console.log("session: ",req.session)
           res.redirect("/main");
         
@@ -70,6 +71,8 @@ router.get("/profile", (req, res) => {
     })
     .catch((err) => console.log("Error: User not found ", err));
 });
+
+
 //================Seeker Profile============
 router.get("/SeekerProfile", (req, res) => {
   console.log("From Login/Signup req.session.userId: ", req.session.userId);
@@ -79,26 +82,36 @@ router.get("/SeekerProfile", (req, res) => {
     })
     .catch((err) => console.log("Error: User not found ", err));
 });
+
 router.use("/protected-profile", (err, req, res, next) => {
   console.log(err);
-  res.redirect("/login");
+  res.redirect("/logIn");
 });
 
 //======================main 
 router.get('/main' , (req,res) =>{
-      Ticket.find().populate('user')
+  if(req.query.myorder){
+    Ticket.find({user: req.session.userId}).sort({'updatedAt': -1}).populate('user').exec()
+    .then((allTicket)=>{
+        res.render('main' , {data: allTicket , user: req.session.user , search: true} )
+
+    }).catch(err=> {console.log(err)})
+  }else{
+      Ticket.find().sort({'updatedAt': -1}).populate('user').exec()
+
         .then((allTicket)=>{
-            res.render('main' , {data: allTicket , idUser: req.session.user})
+            res.render('main' , {data: allTicket , user: req.session.user, search: false })
 
         }).catch(err=> {console.log(err)})
-
+      }
 })
 
 //================Sign out=============
 router.get("/logout" ,(req, res) => {
   req.session.userId = null;
+  req.session.user = null;
   res.redirect("/main");
-  
+
 })
 
 function checkSignIn(req, res, next) {

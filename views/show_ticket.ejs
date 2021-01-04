@@ -1,11 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="/css/show.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ticket</title>
 </head>
-<body>
-    <h1>1</h1>
+<body class="flex">
+
+    <div class="contianer flex">
+
+     <div class="user-sub flex">
+
+       <div class="profile-side">
+        <img src="https://i.pinimg.com/originals/d4/25/75/d42575ad64ae6a1c75da88812785ceeb.gif" alt="">
+       </div>
+
+       <div class="sub-side flex">
+
+        <div class="sub-title">
+            <p>
+                <%= data.subject %>
+            </p>
+         
+
+        </div>
+
+        <div class="sub-content">
+        <p>
+            <%= data.description %>
+        </p>
+         
+         
+        </div>
+
+       </div>
+
+     </div>
+     
+     <% for (let comment of comments) { %>  
+    <div class ='comments flex'>
+        <img src="https://i.pinimg.com/originals/d4/25/75/d42575ad64ae6a1c75da88812785ceeb.gif" alt="">
+        <p><%=comment.user.name%></p>
+      <p><%=comment.description%></p>
+      <% if(user._id == data.user._id){%>
+        <%if(parseInt(data.status) == 0){%>
+        <form action="/accept/<%= comment.user._id %>?_method=put&tickteId=<%= data._id %>"  class="flex" method="POST">
+            <input type="submit" value="accept">
+         </form>
+    <% } %> 
+    <% } %>
+   </div>
+    <% } %>
+     
+     
+
+    <% if((parseInt(user.type) === 1) || parseInt(data.status) == 1){%>
+     <div class="in-comment flex">
+        <form action="/comment/<%= data._id %>" class="flex" method="POST">
+         <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+         <input type="submit" value="confirm" id="comment-button"/>
+        </form>
+     </div>
+    <% } %>
+    </div>
 </body>
 </html>

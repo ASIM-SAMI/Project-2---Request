@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 // const expressLayouts = require('express-ejs-layouts');
 var app = express();
+const methodOverride = require("method-override");
 
  
 
@@ -25,12 +26,14 @@ mongoose.connect(
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride("_method"));
+
 // app.use(expressLayouts) 
   
   // controllers
 app.use(require('./controllers/userC'))
 app.use(require('./controllers/ticketsC'))
-//app.use(require('./controllers/commentC'))
+app.use(require('./controllers/commentC'))
 
 
 // listen on port 4000

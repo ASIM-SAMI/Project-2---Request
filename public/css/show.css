@@ -1,0 +1,101 @@
+.flex{
+    display:flex;
+}
+
+body{
+    justify-content: center;
+    align-items: center;
+}
+
+body .contianer{
+    flex-direction: column;
+    width: 95%;
+    height: 1500px;
+    background-color: wheat;
+}
+
+.contianer .user-sub{
+    width: 95%;
+    min-height: 300px;
+    margin: 3%;
+    background-color: rgb(82, 59, 109);
+    border: 2px solid black;
+}
+.contianer .user-sub .profile-side{
+    background-color:  rgb(253, 239, 115);
+    height: 100%;
+    flex-grow: 1;
+    max-width: 200px;
+    min-width: 150px;
+}
+
+.contianer .user-sub .profile-side img{
+     width: 150px;
+     height: 150px;
+}
+
+.contianer .user-sub .sub-side{
+flex-direction: column;
+align-items: center;
+flex-grow: 1;
+}
+
+.contianer .user-sub .sub-side .sub-title{
+background-color: rgb(253, 239, 115);
+width: 95%;
+flex-grow: 1;
+margin: 5px;
+max-height: 50px;
+}
+
+.contianer .user-sub .sub-side .sub-title p{
+    padding-left: 15px;
+
+}
+
+.contianer .user-sub .sub-side .sub-content{
+    background-color: rgb(246, 245, 255);
+    width: 95%;
+    flex-grow: 10;
+    margin: 5px;
+}
+
+.contianer .user-sub .sub-side .sub-content p{
+padding: 20px;
+}
+
+.contianer .in-comment{
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    height: 20%;
+    background-color: cadetblue;
+    min-height: 300px;
+    margin: 3%;
+    border: 2px solid black;
+}
+
+.contianer .in-comment form{
+
+    flex-direction: column;
+
+}
+
+.contianer .comments{
+    width: 95%;
+    min-height: 200px;
+    margin: 3%;
+    background-color: white;
+    border: 2px solid black;
+}
+
+.contianer .comments p,button{
+margin: 40px 10px
+}
+
+.contianer .comments img{
+    margin: 20px;
+    width: 100px;
+    height: 100px;
+
+}

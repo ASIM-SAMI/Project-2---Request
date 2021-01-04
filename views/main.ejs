@@ -18,9 +18,10 @@
                 <img  src="https://ubisoft-avatars.akamaized.net/a3c1a636-db47-4751-941b-1acc538932de/default_256_256.png" alt="">
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                    <% if ((parseInt(idUser.type)) === 1){ %>       
+               
+                    <% if ((parseInt(user.type)) === 1){ %>       
                         <a class="dropdown-item" href="profile"> Profile</a>
-                   <% } else if ((parseInt(idUser.type)) === 0){%>
+                   <% } else if ((parseInt(user.type)) === 0){%>
                     <a class="dropdown-item" href="SeekerProfile"> Profile</a>
                                <% } %>
                 
@@ -29,14 +30,15 @@
              
             </div>
           </div>
+       
 
        
        <h2>
-           <% if (idUser === null){ %>
+           <% if (user === null){ %>
             <a href="/login">Log in</a>
            <% }else{ %>
 
-              <%= idUser.name %>
+              <%= user.name %>
 
            <% } %>
            
@@ -57,40 +59,57 @@
     <div class="contanier flex">
 
    
-        <% if ((parseInt(idUser.type)) === 0){ %>
+        <% if ((parseInt(user.type)) === 0){ %>
             <div class="nav flex">
                 <form action="/new_ticket">
                     <input type="submit" value="New Post" />
                 </form>
                 
-                <form action="/signup">
-                    <input type="submit" value="Go to Google" />
-                </form>
-                   <% } %>
+                     <% if(search){%>
+                        <a href="/main">All Order</a>
+
+                           
+                        <% }else{%>
+                   <a href="/main?myorder=true">My Order</a>
+                   <% }%>
+                   
         
              
         
         </div>
+        <% } %>
         <div class="tickets-container">
 
  
               <% data.forEach((element) => { %>
                   
-             
+             <% if((parseInt(element.status) == 0)){ %>
             <div class="ticket">
                 <div>
                 <a href="/show_ticket/<%= element._id%>/"><h1><%=element.subject%></h1></a>
-                <p><%=element.description%></p>
-                <p><%=element.user.name%></p>
-                
+                <p>By: <%=element.user.name%></p>
+                <p>Create At: <%= element.createdAt  %>  </p>
+                <p>Updated At: <%= element.createdAt  %>  </p>
                
                 <img src="" alt="">
             </div>
-
+               
             </div>
-            <% }); %>
+            <% }else if(element.user._id == user._id){ %>
+            <div class="ticket">
+                <div>
+                <a href="/show_ticket/<%= element._id%>/"><h1><%=element.subject%></h1></a>
+                <p>By: <%=element.user.name%></p>
+                <p>Create At: <%= element.createdAt  %>  </p>
+                <p>Updated At: <%= element.createdAt  %>  </p>
+               
+                <img src="" alt="">
+            </div>
+               
+            </div>
+            <%} });  %>
 
-
+            
         </div>
     </div>
      

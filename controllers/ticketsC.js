@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router()
-var User = require("../models/userM");
 var Ticket = require("../models/ticketsM");
+var Comment = require("../models/commentM");
 const session = require("express-session")
 const mongoSessisonStore = require("connect-mongo")(session);
 const validator = require("express-validator");
@@ -23,7 +23,7 @@ router.post('/new_ticket_tk' ,(req, res) => {
         subject: req.body.subject,
         img: req.body.img,
         description: req.body.description,
-        user: req.session.userId
+        user: req.session.userId,
     }
     Ticket.create(newTicket)
     .then(newUser =>{
@@ -39,8 +39,19 @@ router.post('/new_ticket_tk' ,(req, res) => {
 //========= Show Ticket Page =========//
 
 router.get('/show_ticket/:id' , (req,res) =>{
+  let id = req.params.id;
 
-  res.render('show_ticket')
+  Ticket.findById(id).populate('user')
+  
+  .then((ticket)=>{
+
+    Comment.find({ticket: id })
+
+    .then((comments) =>
+      res.render('show_ticket', {data: ticket, comments , user: req.session.user})
+    )
+
+  }).catch(err=>{console.log(err)})
 
 })
 
