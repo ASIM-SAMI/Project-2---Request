@@ -1,8 +1,9 @@
 body{
-    background-color: aqua;
+    background-color:  #e7e7de;
     align-items: center;
     flex-direction: column;
     height: 1000px;
+    margin :0
     
 
 }
@@ -21,26 +22,39 @@ body{
     flex-grow: 1;
 }
 .header .btn-header{
+    padding: 5px ;
     background-color:#0f3057;
     flex-grow: 3;
     justify-content: flex-end;
 }
 
-.button {
-    transition-duration: 0.4s;
-  }
+.h-btn {
   
-.button:hover {
-    background-color: #4CAF50; /* Green */
-    color: white;
+background-color:#0f3057;border-radius: 10px;
+  border: 3px solid  #e7e7de;
+  color: #e7e7de;
+  padding: 5px 9px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 5px;
+  transition-duration: 0.4s;
+  cursor: pointer;
   }
+
+.h-btn:hover {
+    background-color:#e7e7de;
+    color:#0f3057;
+  }
+
   .c{
       width: 100%;
       flex-wrap: wrap;
   }
 
   .c .box1 , .box2{
-      min-width: 500px;
+      min-width: 200px;
      background-color: brown;
    
     height: 200px;
