@@ -32,7 +32,7 @@ const UserSchema = new Schema({
 
 });
 
-UserSchema.statics.createSecure = (name, email , password,img , type,callback) => {
+UserSchema.statics.createSecure = (name, email , password,img , type,heading ,bio ,callback) => {
   console.log("I received this: ", name, email , password,img , type);
   // hash password user enters at sign up
   bcrypt.genSalt((err, salt) => {
@@ -44,7 +44,7 @@ UserSchema.statics.createSecure = (name, email , password,img , type,callback) =
       console.log("Name:", name);
       console.log("email:", email);
       console.log("type: ", type);
-      User.create({ name: name, email : email,passwordDigest: passwordHash, img : img  , type: type}, callback);
+      User.create({ name: name, email : email,passwordDigest: passwordHash, img : img  , type: type , heading:heading , bio:bio }, callback);
     });
   });
 };

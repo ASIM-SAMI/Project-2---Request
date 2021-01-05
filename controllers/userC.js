@@ -6,8 +6,9 @@ const session = require("express-session")
 const mongoSessisonStore = require("connect-mongo")(session);
 const validator = require("express-validator");
 const mongoose = require("mongoose");
+const upload = require("express-fileupload")
 
-
+router.use(upload())
 router.use(
     session({
       store: new mongoSessisonStore({ mongooseConnection: mongoose.connection }),
@@ -72,7 +73,10 @@ router.get("/profile", (req, res) => {
     .catch((err) => console.log("Error: User not found ", err));
 });
 //================Seeker Profile============
+
+
 router.get("/EditProfile", (req, res) => {
+  //res.sendFile(__dirname +'./Files')
   console.log("From Login/Signup req.session.userId: ", req.session.userId);
   User.findOne({ _id: req.session.userId })
     .then((currentUser) => {
@@ -91,10 +95,14 @@ router.use("/protected-profile", (err, req, res, next) => {
 
 // update action
 router.post("/EditProfile", (req, res) => {
+ if(req.files){
+   console.log(req.files)
+ }
     const id = req.params.id;
     let updateUserProfile = {
         name: req.body.name,
         email: req.body.email,
+        img: req.body.img,
         heading: req.body.heading,
         bio: req.body.bio
     };
@@ -187,6 +195,9 @@ router.post('/users' ,(req, res) => {
         req.body.password,
         req.body.img,
         req.body.type,
+        req.body.heading,
+        req.body.bio,
+        
         (err, newUser) => {
 
         var id = req.session.userId;

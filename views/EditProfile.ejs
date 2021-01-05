@@ -38,8 +38,15 @@
             <div class="col-md-4 border-right">
                 <div class="d-flex flex-column align-items-center text-center p-3 py-5"> 
                   
-                  <img  src="https://ubisoft-avatars.akamaized.net/a3c1a636-db47-4751-941b-1acc538932de/default_256_256.png" alt="Profile Image">
+                  <img name="img" class="profile-pic" src="https://ubisoft-avatars.akamaized.net/a3c1a636-db47-4751-941b-1acc538932de/default_256_256.png" alt="Profile Image">
+  
+  
+  
 
+          <span class="p-image" ">
+            <i class="fa fa-camera upload-button"></i>
+            <input class="file-upload" type="file" accept="image/*"/>
+          </span>
                   <span class="font-weight-bold"><%=user.name%></span><span class="text-black-50"><%=user.email%></span>
                 
                 </div>
@@ -78,11 +85,8 @@
                            value="<%=user.bio%>" placeholder="User Bio"></div>
 
                            <div class="col-md-6">
-                            <label class="labels">Heading : </label>
-                            <input type="text" 
-                            name ="heading" class="form-control"
-                             value="<%=user.bio%>" placeholder="heading"></div>
-                  </div>
+                            <label class="labels">About Me : </label>
+                            <textarea class="form-control" id="textAreaExample" name ="heading" placeholder="Talk about your self "rows="5"><%=user.bio%></textarea>
                     <div class="mt-5 text-right"><input class="btn btn-primary profile-button" type="submit" value="Save Profile"></div>
                   </form>
                 </div>

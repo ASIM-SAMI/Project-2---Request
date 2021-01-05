@@ -1,80 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Request</title>
+    <title>Request </title>
 </head>
 
 
+
+
 <body class="flex">
-    <div class="header flex">
-        <!-- Mnue -->
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img  src="https://ubisoft-avatars.akamaized.net/a3c1a636-db47-4751-941b-1acc538932de/default_256_256.png" alt="">
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">    
-               <a class="dropdown-item" href="SeekerProfile"> Profile</a>
-
-                <a class="dropdown-item"  href="/logout">Sign Out</a>
-              
-            </div>
-          </div>
-
-       
-       <h2>
-           <% if (findUser === null){ %>
-            <a href="/login">Log in</a>
-           <% }else{ %>
-
-              <%= findUser.name %>
-
-           <% } %>
-           
-        </h2>
-
+   <!--------------------------Header---------------------------->
+   
+   <div class="header flex">
+    
        <h1>Request</h1>
-    </div>
-    <div class="body-container">
-      <div class="sec1">
-        <!--  here will be slider  -->
-        <!--<div class="w3-content w3-display-container">
-          <img class="mySlides" src="https://www.dissolve.com.au/wp-content/uploads/2018/08/blog-img.jpg">
-          <img class="mySlides" src="https://static.twentyoverten.com/content/featured/common-estate-planning-mistakes-to-avoid.jpg">
-          <img class="mySlides" src="https://img.freepik.com/free-photo/businessman-analyzing-company-financial-report-with-augmented-reality-graphics_34141-360.jpg?size=626&ext=jpg">
-          <div class="w3-center w3-display-bottommiddle" style="width:100%">
-            <div class="w3-left" onclick="plusDivs(-1)">&#10094;</div>
-            <div class="w3-right" onclick="plusDivs(1)">&#10095;</div>
-             <span class="w3-badge demo w3-border" onclick="currentDiv(1)"></span>*/
-            <span class="w3-badge demo w3-border" onclick="currentDiv(2)"></span>
-            <span class="w3-badge demo w3-border" onclick="currentDiv(3)"></span> -->
-          </div>
-        </div>
-
+       <div class="btn-header flex">
+       <button>Get started</button>
       </div>
-      <div class="sec2">
-           <!--  here will be 4 button with background img link to main page with filter of ticket category -->
+   </div>
+   <div class="c flex">
+     <div class="box1"></div>
+     <div class="box2"></div>
 
-      </div>
-      <div class="sec3">
-        <!--  here will be button frr sign up -->
-      </div>
+   </div>
 
 
-    </div>
-    
-    
 
-    <div class="footer flex"><h3>Footer</h3></div>
-    
+
+   <!--------------------------Header---------------------------->
+    <div class="body-container"></div>
+   <!--------------------------Footer---------------------------->
+   <div class="footer"></div>
+ 
 </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <script src="./jquery-3.5.1.js"></script>
 
-    <script src="./main.js"></script>
+    <script src="./index.js"></script>
 
     
     <!---  for mnue in the header -->

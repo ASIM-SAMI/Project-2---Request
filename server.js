@@ -35,7 +35,11 @@ app.use(require('./controllers/userC'))
 app.use(require('./controllers/ticketsC'))
 app.use(require('./controllers/commentC'))
 
+app.get('/' , (req,res) =>{
+ 
+res.render('index')
 
+})
 // listen on port 4000
 app.listen(process.env.PORT, function () {
     console.log(`Server is running ${process.env.PORT}`);

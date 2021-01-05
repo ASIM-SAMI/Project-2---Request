@@ -1,0 +1,53 @@
+body{
+    background-color: aqua;
+    align-items: center;
+    flex-direction: column;
+    height: 1000px;
+    
+
+}
+.flex{
+    display: flex;
+}
+
+
+.header{
+    margin: 0;
+    width: 100%;
+    background-color: #0f3057;
+    color: #e7e7de;
+}
+.header h1{
+    flex-grow: 1;
+}
+.header .btn-header{
+    background-color:#0f3057;
+    flex-grow: 3;
+    justify-content: flex-end;
+}
+
+.button {
+    transition-duration: 0.4s;
+  }
+  
+.button:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+  }
+  .c{
+      width: 100%;
+      flex-wrap: wrap;
+  }
+
+  .c .box1 , .box2{
+      min-width: 500px;
+     background-color: brown;
+   
+    height: 200px;
+   
+
+  }
+.box2{
+    background-color: cadetblue;
+}
+
