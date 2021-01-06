@@ -4,7 +4,7 @@ require("dotenv").config();
 // const expressLayouts = require('express-ejs-layouts');
 var app = express();
 const methodOverride = require("method-override");
-
+const port = process.env.PORT || 3000 ;
  
 
 
@@ -41,6 +41,6 @@ res.render('index')
 
 })
 // listen on port 4000
-app.listen(process.env.PORT, function () {
-    console.log(`Server is running ${process.env.PORT}`);
+app.listen(port, function () {
+    console.log(`Server is running ${port}`);
   });
