@@ -6,9 +6,7 @@ const session = require("express-session")
 const mongoSessisonStore = require("connect-mongo")(session);
 const validator = require("express-validator");
 const mongoose = require("mongoose");
-const upload = require("express-fileupload")
 
-router.use(upload())
 router.use(
     session({
       store: new mongoSessisonStore({ mongooseConnection: mongoose.connection }),

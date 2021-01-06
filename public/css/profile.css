@@ -1,118 +1,131 @@
-.header img {
-    float: left;
-    width: 55px;
-    height: 55px;
+
+body{
+    background-color:  #e7e7de;
+    align-items: center;
+    flex-direction: column;
+    height: 1000px;
+    margin :0
+    
+  
   }
-  /* ==== User Name Style ====  */
-.header h1 {
-    position: relative;
-    top: 18px;
-    bottom: 50px;
-    left: 10px;
+  
+  .flex{
+    display: flex;
   }
-/* ==== NAV Button Style ==== */
-/* >>>>>>>>>> Left with Centralization */
-.button {
-    border-radius: 8px;
-    background-color: white;
-    color: black;
-    border: 2px solid #d60000; 
-    padding: 14px 16px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 12px;
-    margin: 10px 2px;
+  
+  
+  .header{
+    margin: 0;
+    width: 100%;
+    background-color: #0f3057;
+    color: #e7e7de;
   }
-  /* ==== NAV Button Hover ==== */
-.button:hover {
-    background-color: #b80000b9; 
-        color: white;
-      opacity: 1
-}
-/* Active Button */
-.button:active {
-    background-color: #b80000b9; 
-    color: white;
+  .header h1{
+    flex-grow: 1;
   }
-button:focus{
-    background-color: #b80000b9; 
-    color: white;
-}
-/* Hides The Content */
-.content {
-    display: none;
-}
+  .header .btn-header{
+    padding: 5px ;
+    background-color:#0f3057;
+    flex-grow: 3;
+    justify-content: flex-end;
+  }
+  
+  .h-btn {
+  
+  background-color:#0f3057;border-radius: 10px;
+  border: 3px solid  #e7e7de;
+  color: #e7e7de;
+  padding: 5px 9px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 5px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  }
+  
+  .h-btn:hover {
+    background-color:#e7e7de;
+    color:#0f3057;
+  }
+  .flex{
+    display: flex;
+  }
+  
+  
+  .bio-container{
+    margin: 0;
+    width: 100%;
+    height: 200px;
+    background-color: #e7e7de;
+    color: #0f3057;
+  }
+  .bio-img {
+    flex-grow: 1;
+   
+    background-color: #e7e7de;
+  }
+  .bio-img img{
+    width:90px
+  }
+  .bio-discription{
+    background-color: #e7e7de;
+    padding: 5px ;
+    flex-grow: 4;
+    justify-content: flex-end;
+  
+  }
+  
+  .h1-b{
+    align-items: center;
+  }
+  .v{
+    margin: 20px;
+    width: 85%;
+    border-radius: 10px;
+    border: 3px solid  #0f3057;
+  }
+  
+  .info-container{
+    margin: 10px;
+    width: 65%;
+    border-radius: 10px;
+   
 
-body {
-  background: #BA68C8
-}
-
-.form-control:focus {
-  box-shadow: none;
-  border-color: #BA68C8
-}
-
-.profile-button {
-  background: #BA68C8;
-  box-shadow: none;
-  border: none
-}
-
-.profile-button:hover {
-  background: #682773
-}
-
-.profile-button:focus {
-  background: #682773;
-  box-shadow: none
-}
-
-.profile-button:active {
-  background: #682773;
-  box-shadow: none
-}
-
-.back:hover {
-  color: #682773;
-  cursor: pointer
-}
-.profile-pic {
-  max-width: 200px;
-  max-height: 200px;
-  display: block;
-}
-
-.file-upload {
-  display: none;
-}
-.circle {
-  border-radius: 1000px !important;
-  overflow: hidden;
-  width: 128px;
-  height: 128px;
-  border: 8px solid rgba(255, 255, 255, 0.7);
-  position: absolute;
-  top: 72px;
-}
-img {
-  max-width: 100%;
-  height: auto;
-}
-.p-image {
-position: absolute;
-top: 167px;
-right: 30px;
-color: #666666;
-transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
-}
-.p-image:hover {
-transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
-}
-.upload-button {
-font-size: 1.2em;
-}
-
-.upload-button:hover {
-transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
-color: #999;
-}
+  }
+  
+  /* ==== NAV Button Style ==== */
+  /* >>>>>>>>>> Left with Centralization */
+  .button {
+      border-radius: 8px;
+      background-color:#0f3057;
+      color: #e7e7de;
+      border: 2px solid #0f3057; 
+      padding: 14px 16px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 12px;
+      margin: 10px 2px;
+    }
+    /* ==== NAV Button Hover ==== */
+  .button:hover {
+    background-color:#e7e7de;
+    color:#0f3057;
+        opacity: 1
+  }
+  /* Active Button */
+  .button:active {
+      background-color: #0f3057; 
+      color: white;
+    }
+  button:focus{
+      background-color:#0f3057; 
+      color: white;
+  }
+  /* Hides The Content */
+  .content {
+      display: none;
+  }
+  
+  

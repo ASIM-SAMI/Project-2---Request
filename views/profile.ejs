@@ -6,25 +6,47 @@
     <link rel="stylesheet" href="/css/profile.css">
     <title>Request</title>
 </head>
-<body>
-    <div class="header">
-        <img  src="./File/<%= user.img %>" alt="">
-        <!-- ==== Name of User ==== -->
-        <% if (user && user.email) { %>
-        <h1>Hi <%= user.name %></h1>
-        <p><%= user.bio %></p>
-        <a href="/EditProfile"> Edit Profile</a>
-    <hr>
+<body class="flex">
+
+    <div class="header flex">
+        <h1>Request</h1>
+        <div class="btn-header flex">
           
-      </div>
+         </div>
+       </div>
+
+<div class="v">
+    <div class="bio-container flex">
+        <div class="bio-img">
+        <img src="https://ubisoft-avatars.akamaized.net/a3c1a636-db47-4751-941b-1acc538932de/default_256_256.png" alt="Profile Image">
+         </div>
+        <% if (user && user.email) { %>
+            
+        <div class="bio-discription ">
+           <h1 class="h1-b">
+             <%= user.name %>
+          
+                </h1>
+                <p class="h1-b"> <%= user.bio %></p>
+              
+
+                <button  class="button"onclick="window.location.href='/EditProfile'">Edit Profile</button>
+         </div>
+
+       </div>
+    </div>
+
+ 
+    
        <!-- ==== Profile Buttons ==== -->
     <div class="topnav">
         <button id="1" class="button">Info</button>
         <button id="2" class="button">Feedback</button>
         <button id="3" class="button">Last Sub</button>
           </div>
+          <div class="info-container">
           <div id = "info" class = "content">
-              <h2>Heading</h2>
+              <h2>About Me</h2>
               <h3><%= user.heading %></h3>
           </div>
         <div id = "feedBack" class = "content">
@@ -39,6 +61,7 @@
             <h2>Title Sub</h2>
             <h3>Type:</h3>
         </div>
+    </div>
 
         <% } else { %>
             You're not logged in. </h2>
