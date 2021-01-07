@@ -6,6 +6,8 @@ const session = require("express-session")
 const mongoSessisonStore = require("connect-mongo")(session);
 const validator = require("express-validator");
 const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
+
 
 router.use(
     session({
@@ -71,10 +73,7 @@ router.get("/profile", (req, res) => {
     .catch((err) => console.log("Error: User not found ", err));
 });
 //================Seeker Profile============
-
-
 router.get("/EditProfile", (req, res) => {
-  //res.sendFile(__dirname +'./Files')
   console.log("From Login/Signup req.session.userId: ", req.session.userId);
   User.findOne({ _id: req.session.userId })
     .then((currentUser) => {
@@ -93,40 +92,63 @@ router.use("/protected-profile", (err, req, res, next) => {
 
 // update action
 router.post("/EditProfile", (req, res) => {
- if(req.files){
-   console.log(req.files)
- }
-    const id = req.params.id;
-    let updateUserProfile = {
-        name: req.body.name,
-        email: req.body.email,
-        img: req.body.img,
-        heading: req.body.heading,
-        bio: req.body.bio
-    };
-    console.log("Updated Profile "+updateUserProfile)
+  const id = req.params.id;
+  let updateUserProfile = {
+      name: req.body.name,
+      email: req.body.email,
+      img:req.body.img,   
+      heading: req.body.heading,
+      bio: req.body.bio
+  };
+  console.log(" immggg "+req.body.img)
+  if( req.body.password ===""){
+   
+  console.log("Updated Profile "+updateUserProfile)
+  User.findByIdAndUpdate(req.session.userId, updateUserProfile)
+      
+    .then((user) => {
+      res.render("profile", { user });
+
+      
+}).catch((err) => console.log("Error: User not found ", err));
+  }else{
+    let password =bcrypt.hashSync(req.body.password, 10)
+    updateUserProfile.passwordDigest=password;
     User.findByIdAndUpdate(req.session.userId, updateUserProfile)
-        
-      .then((user) => {
-        res.render("profile", { user });
+      
+    .then((user) => {
+      res.redirect("/profile");
 
-        
-  }).catch((err) => console.log("Error: User not found ", err));
-
+      
+}).catch((err) => console.log("Error: User not found ", err));
+  }
 });
 //====================== Main 
 router.get('/main' , (req,res) =>{
   if(req.query.myorder){
     Ticket.find({user: req.session.userId}).sort({'updatedAt': -1}).populate('user').exec()
     .then((allTicket)=>{
-        res.render('main' , {data: allTicket , user: req.session.user , search: true} )
+      console.log("aaaa",user.img)
+      User.findById(req.session.userId)
+
+      .then((user)=>{
+
+        res.render('main' , {data: allTicket , user: user , search: true} )
+
+      }).catch(err=> {console.log(err)})
 
     }).catch(err=> {console.log(err)})
   }else{
       Ticket.find().sort({'updatedAt': -1}).populate('user').exec()
 
         .then((allTicket)=>{
-            res.render('main' , {data: allTicket , user: req.session.user, search: false })
+          User.findById(req.session.userId)
+
+          .then((user)=>{
+    
+            res.render('main' , {data: allTicket , user: user , search: true} )
+    
+          }).catch(err=> {console.log(err)})
 
         }).catch(err=> {console.log(err)})
       }
@@ -191,11 +213,7 @@ router.post('/users' ,(req, res) => {
         req.body.name,
         req.body.email,
         req.body.password,
-        req.body.img,
         req.body.type,
-        req.body.heading,
-        req.body.bio,
-        
         (err, newUser) => {
 
         var id = req.session.userId;
@@ -211,6 +229,9 @@ router.post('/users' ,(req, res) => {
       });
 
 })
+
+
+
 
    
 module.exports = router;

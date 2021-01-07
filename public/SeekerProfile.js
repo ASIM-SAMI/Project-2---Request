@@ -3,24 +3,13 @@ $(".back-to-home").on("click" , ()=>{
     location.href = "main";
  })
 
+ $('#password, #cpassword').on('keyup', function () {
+    if ($('#password').val() == $('#cpassword').val()) {
+      $('#message').html('Matching').css('color', 'green');
+    } else 
+      $('#message').html('Not Matching').css('color', 'red');
+  });
 
- var readURL = function(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function (e) {
-                $('.profile-pic').attr('src', e.target.result);
-            }
-    
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-    
-
-    $(".file-upload").on('change', function(){
-        readURL(this);
-    });
-    
-    $(".upload-button").on('click', function() {
-       $(".file-upload").click();
-    });
+ $(".material-icons").on("click" ,function insert(){
+    $(".img-e").removeClass("content");
+  });

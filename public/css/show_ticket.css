@@ -1,0 +1,198 @@
+.flex{
+    display:flex
+}
+
+body{
+    justify-content: center;
+    align-items: center;
+}
+
+body .continer{
+    margin-top: 60px;
+    width: 98%;
+
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+body .continer #ticket{
+    
+    margin: 10px;
+    width: 100%;
+    min-height: 500px;
+    background-color: #284b75;
+    border: 2px solid black;
+}
+
+
+body .continer #description{
+    flex-grow: 4;
+    background-color: #E1F6FF;
+}
+
+body .continer #profile{
+    flex-grow: 1;
+    background-color: #284b75;
+    max-width: 200px;
+    min-width: 150px;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid black;
+  }
+
+body .continer #profile .name-profile{
+margin-top: 15px;
+color:white;
+font-size: 1.3em;
+}
+
+body .continer #profile img{
+margin-top: 15px;
+width: 70%;
+max-height: 150px;
+border: 2px solid black;
+}
+
+body #ticket-description-title{
+flex-direction: column;
+width: 100%;
+border-right: 2px solid black;
+border-bottom: 2px solid black;
+border-top: 2px solid black;
+
+}
+
+body .continer #title-subject{
+    height: 30px;
+    width: 95%;
+    text-align: start;
+    margin: 15px 0px 5px 10px;
+    color:white;
+    
+
+}
+
+    body .continer #description p{
+    margin: 50px;
+    min-width: 150px;
+    max-width: 100%;
+    text-align: start;
+    }
+    
+
+    
+
+body .continer .comments{
+        margin: 10px;
+        width: 100%;
+        min-height: 350px;
+        border: 2px solid black;
+
+}
+
+
+body .continer .comment-description{
+    flex-grow: 4;
+    background-color: #E1F6FF;
+    border: 2px solid black;
+
+}
+
+
+body .continer .lancer-profile{
+    flex-grow: 1;
+    background-color: #284b75;
+    max-width: 200px;
+    min-width: 150px;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid black;
+
+  }
+
+body .continer .lancer-profile .lancer-name-profile{
+margin-top: 15px;
+color:white;
+font-size: 1.3em;
+}
+
+body .continer .lancer-profile img{
+margin-top: 15px;
+width: 70%;
+max-height: 150px;
+border: 2px solid black;
+}
+
+body .comment-description{
+flex-direction: column;
+width: 100%;
+}
+
+
+body .continer .lancer-description p{
+    margin: 50px;
+    min-width: 150px;
+    max-width: 100%;
+    text-align: start;
+}
+body .continer .in-comment{
+    width: 70%;
+    margin-top: 100px;
+    margin-bottom: 200px;
+}
+body .continer .in-comment form{
+    flex-direction: column;
+
+}
+
+body .continer .in-comment form input{
+background-color: #008891;
+color:white;
+width: 100%;
+height: 50px;
+}
+body .continer .in-comment form input:hover{
+    background-color: #121212;
+    color:#008891;
+}
+
+
+.border{
+    border: 2px solid green;
+}
+
+.btn{
+    width: 100px;
+    background-color:#E1F6FF;
+    color: #008891;
+    cursor: pointer;
+    margin: 50px
+}
+
+.btn:hover{
+
+    color: #E1F6FF;
+    background-color:#008891;
+
+}
+
+#rateme-btn{
+
+    width: 300px;
+    height: 250px;
+    background-color:#E1F6FF;
+    color: #008891;
+    cursor: pointer;
+    margin: 50px;
+}
+
+#rateme-btn:hover{
+    color: #E1F6FF;
+    background-color:#008891;
+}
+
+#logo a{
+    text-decoration: none;
+    color:#E1F6FF;
+}

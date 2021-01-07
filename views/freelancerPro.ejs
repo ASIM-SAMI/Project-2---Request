@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/freelancer.css">
+    <title>Request</title>
+</head>
+
+<body>
+
+    <div class="header">
+          <!-- ==== Img of User ==== -->
+<!-- <img src="user.png" alt="user"/> -->   
+     <!-- ==== Name of User ==== -->
+        <h1>Hi John</h1>
+      </div>
+
+       <!-- ==== Profile Buttons ==== -->
+    <div class="topnav">
+        <button id="1" class="button">Info</button>
+        <button id="2" class="button">Feedback</button>
+        <button id="3" class="button">Last Sub</button>
+          </div>
+
+
+          <form method="get" action="/info">
+          <h1> <% heading %></h1>
+          <p> <% bio %></p>
+
+
+        <div id = "feedBack" class = "content">
+            <h2>  <% Name </h2>  %>
+            <!-- ==== Stars Imgs ==== 
+            <img src=".png" alt="Sub img"/> 
+            -->
+        </div>
+
+        <div id = "lastSub" class = "content">
+              <!-- ==== Sub Img ==== 
+       <img src=".png" alt="Sub img"/> -->
+            <h2>Title Sub</h2>
+            <h3>Type:</h3>
+        </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script> 
+    <script src="FLProfile.js"></script> 
+</body>
+</html>

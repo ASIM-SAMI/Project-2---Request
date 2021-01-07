@@ -5,9 +5,6 @@ require("dotenv").config();
 var app = express();
 const methodOverride = require("method-override");
 const port = process.env.PORT || 3000 ;
- 
-
-
 
 // var User = require("./models/userM");
 // var Ticket = require("./models/ticketsM");
@@ -35,11 +32,7 @@ app.use(require('./controllers/userC'))
 app.use(require('./controllers/ticketsC'))
 app.use(require('./controllers/commentC'))
 
-app.get('/' , (req,res) =>{
- 
-res.render('index')
 
-})
 // listen on port 4000
 app.listen(port, function () {
     console.log(`Server is running ${port}`);

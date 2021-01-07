@@ -12,12 +12,6 @@ body {
     box-sizing: border-box
 }
 
-.lcol {
-    background: linear-gradient(to bottom, rgba(26, 111, 118, 1) 50%, rgba(40, 30, 101, 1) 100%, rgba(125, 185, 232, 1) 100%);
-    height: 550px;
-    padding: 0 35px
-}
-
 .rcol {
     background: #fff;
     padding: 80px;
@@ -25,27 +19,31 @@ body {
 }
 
 span.txt {
-    color: #17C296
+    color: #00587a;
+    font-size: 140%;
 }
 
 .greeting {
     padding-top: 200px;
-    padding-right: 90px
+    padding-right: 90px;
+    color: black;
+    float: left;
+    font-weight: bolder;
+    font-size: 35px;
+    margin-left: 10px;
 }
-
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 3px solid rgb(0, 0, 0);
+    margin: 1em 0;
+    padding: 0;
+}
 h6.mt-3 {
     padding-right: 115px
 }
 
-.footer {
-    margin-top: 220px
-}
-
-.footer span {
-    color: #B0A1E2;
-    font-size: 9px;
-    cursor: pointer
-}
 
 .fab {
     color: #EDEDF5;
@@ -162,9 +160,51 @@ p.exist span {
 @media screen and (max-width: 420px) {
     .rcol {
         padding: 60px 50px 60px 50px
-    }
+    }}
 
-    .footer {
-        margin-top: 140px
-    }
+.existing {
+    margin-top: 18px;
+    margin-left: 21px;
+    font-weight: bold;
+}
+.started {
+    background-color: #008891;
+    color: white;
+    border-radius: 16px;
+    width: 90%;
+    padding: 5.5px 15px;
+    border: none;
+    margin-top: 5px;
+    box-shadow: 0 0 5pt 2pt #D3D3D3;
+}
+.signup-name {
+    border-radius: 16px;
+    border: 1px solid rgb(255, 255, 255);
+    width: 90%;
+    padding: 4.5px 10px;
+    box-shadow: 0 0 5pt #D3D3D3;
+}
+.signup-email {
+    margin-top: 20px;
+    border-radius: 16px;
+    border: 1px solid rgb(255, 255, 255);
+    width: 90%;
+    padding: 4.5px 10px;
+    box-shadow: 0 0 5pt #D3D3D3;
+}
+.signup-pass {
+    margin-top: 3px;
+    border-radius: 16px;
+    border: 1px solid rgb(255, 255, 255);
+    width: 90%;
+    padding: 4.5px 10px;
+    box-shadow: 0 0 5pt #D3D3D3;
+}
+.form-choose{
+    margin-top: 26px;
+    margin-left: 10px;
+}
+.from-all{
+    margin-top: 7%;
+    margin-left: 7%;
 }

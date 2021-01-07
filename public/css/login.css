@@ -2,9 +2,43 @@
 .image {
     min-height: 100vh
 }
+.sign-in-btn {
+    background-color: #008891;
+    color: white;
+    border-radius: 16px;
+    width: 70%;
+    padding: 5.5px 15px;
+    border: none;
+    margin-left: 85px;
+    box-shadow: 0 0 5pt 2pt #D3D3D3;
 
-.bg-image {
-    background-image: url('https://www.dissolve.com.au/wp-content/uploads/2018/08/blog-img.jpg');
-    background-size: cover;
-    background-position: center center
+}    
+
+.create-account {
+    font-style: italic;
+    color: #0f3057;
+    font-weight: bold;
+}
+.or {
+    margin-left: 150px;
+
+}
+
+.container {
+    margin-top: 10%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.form {
+    width: 70%;
+    margin-left: 85px;
+}
+
+#inputEmail{
+    margin-bottom: 15px;
+}
+
+.login-word {
+    margin-left: 230px;
 }

@@ -15,25 +15,21 @@ const UserSchema = new Schema({
     type: String,
     required: true,
   },
-  img:String,
+  img:{ type: String,
+  default: "https://ubisoft-avatars.akamaized.net/a3c1a636-db47-4751-941b-1acc538932de/default_256_256.png" },
+
   type : {
     type: String,
     required: true,
   },
-  heading: {
-    type: String,
-    required: true,
-  },
-  bio: {
-    type: String,
-    required: true,
-  },
-  tickets : [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}]
+  heading: String,
+  bio: String,
+  tickets : {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
 
 });
 
-UserSchema.statics.createSecure = (name, email , password,img , type,heading ,bio ,callback) => {
-  console.log("I received this: ", name, email , password,img , type);
+UserSchema.statics.createSecure = (name, email , password ,type,callback) => {
+  console.log("I received this: ", name, email , password, type);
   // hash password user enters at sign up
   bcrypt.genSalt((err, salt) => {
     // changes every time
@@ -44,10 +40,25 @@ UserSchema.statics.createSecure = (name, email , password,img , type,heading ,bi
       console.log("Name:", name);
       console.log("email:", email);
       console.log("type: ", type);
-      User.create({ name: name, email : email,passwordDigest: passwordHash, img : img  , type: type , heading:heading , bio:bio }, callback);
+      User.create({ name: name, email : email,passwordDigest: passwordHash, type: type}, callback);
     });
   });
 };
+
+/*  ----------------change password 
+UserSchema.statics.updatePassword = (upassword ) => {
+  console.log("I received this: ", upassword);
+  // hash password user enters at sign up
+  bcrypt.genSalt((err, salt) => {
+    // changes every time
+    console.log("bcrypt salt:", salt);
+    bcrypt.hash(upassword, salt, (err, passwordHash) => {
+  
+      User.update({passwordDigest: passwordHash}, callback);
+    });
+  });
+};*/
+
 
 
 UserSchema.statics.authenticate = (

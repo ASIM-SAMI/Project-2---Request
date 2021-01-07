@@ -3,54 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/login.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css	">
+ <link rel="stylesheet" href="/css/login.css"> 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css	">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Log In</title>
 
 </head>
 <body>
-
-
-
-    <div class="container-fluid">
-        <div class="row no-gutter">
-            <div class="col-md-6 d-none d-md-flex bg-image"></div>
-            <div class="col-md-6 bg-light">
-                <div class="login d-flex align-items-center py-5">
                     <div class="container">
-                        <div class="row">
                             <div class="col-lg-7 col-xl-6 mx-auto">
-                                <h3 class="display-4">LOGIN </h3> <br>
+                                <h2 class="login-word">LOGIN </h2> <br>
                                 <form action="/sessions" method="POST">
-                                    <h6 name="error" class="login-error"><%= err %></h6>
-                                    
-                                    <div class="form-group mb-3"> 
+        <div class="form"> 
                                         <input id="inputEmail" type="email"  placeholder="Email" name="email" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4" required>
                                     </div>
                                     
-                                    <div class="form-group mb-3"> 
+                                    <div class="form"> 
                                         <input id="inputPassword" type="password"  placeholder="Password" name="password" required="" class="form-control rounded-pill border-0 shadow-sm px-4 text-danger" required><br> 
                                     </div>
                                     
                                     
                                     
-                                    <button type="submit" class="btn btn-danger btn-block text-uppercase mb-2 rounded-pill shadow-sm">Sign in</button>
+                                    <button type="submit" class="sign-in-btn" >Sign in</button>
                                     <div class="text-center d-flex justify-content-between mt-4">
-                                        <p> OR &nbsp<a href="/signup" class="font-italic text-muted"> <u>Create Account</u></a></p>
+                                        <p class = "or"> Don't have an account yet? &nbsp<a href="/signup" class="create-account"> <u>Sign Up</u></a></p>
                                     </div>
                                 </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
+                
+</div>
 
     <script src="./jquery-3.5.1.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js	"></script>
-    <script src="./index.js"></script>
+   <script src="./index.js"></script> 
 </body>
 </html>

@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="/css/show.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/show_ticket.css">
+    
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 , shrink-to-fit=no">
- <!-- Bootstrap CSS -->
- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- Bootstrap CSS -->
+ 
 
  <script src="https://cdn.tiny.cloud/1/5298hv077rj52cakhd19snwvwi9zf0tg190zrtiodysuyegq/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
    
@@ -13,7 +16,7 @@
   tinymce.init({
       selector: 'textarea',
       plugins: ' tinydrive advcode casechange imagetools formatpainter linkchecker autolink lists checklist media image link code mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
-      toolbar: ' h1 h2 bold italic strikethrough blockquote insertfile image link bullist numlist backcolor code |casechange checklist formatpainter permanentpen table',
+      toolbar: ' undo redo |formatselect |forecolor backcolor bold italic strikethrough blockquote | image link | bullist numlist  aligncenter  alignleft alignright alignjustify| checklist  table',
       toolbar_mode: 'floating',
       menubar: false,
       tinycomments_mode: 'embedded',
@@ -24,118 +27,154 @@
   
   
  
- 
- <title>Ticket</title>
+    <title>Ticket</title>
 </head>
 <body class="flex">
 
-    <div class="contianer flex">
-
-     <div class="user-sub flex">
-
-       <div class="profile-side">
-        <img src="https://i.pinimg.com/originals/d4/25/75/d42575ad64ae6a1c75da88812785ceeb.gif" alt="">
-       </div>
-
-       <div class="sub-side flex">
-
-        <div class="sub-title">
-            <p>
-                <%= data.subject %>
-            </p>
-         
-
+     <!--  Header  -->
+     <div id="header" class="flex">
+             
+        <div id="logo-bar" class="flex">
+        <div id="logo"><a href="/main">Request</a></div>
         </div>
-
-        <div class="sub-content">
-        <p>
-            <%= data.description %>
-        </p>
-         
-         
-        </div>
-
-       </div>
-
-     </div>
-     
-     <% for (let comment of comments) { %>  
-    <div class ='comments flex'>
-        <img src="https://i.pinimg.com/originals/d4/25/75/d42575ad64ae6a1c75da88812785ceeb.gif" alt="">
-        <p><%=comment.user.name%></p>
-        <%=comment.description%>
-      <% if(user._id == data.user._id){%>
-        <%if(parseInt(data.status) == 0){%>
-        <form action="/accept/<%= comment.user._id %>?_method=put&tickteId=<%= data._id %>"  class="flex" method="POST">
-            <input type="submit" value="accept">
-         </form>
-    <% } %> 
-    <% } %>
-   </div>
-    <% } %>
-     
-     
-
-    <% if((parseInt(user.type) === 1) || parseInt(data.status) == 1){%>
-     <div class="in-comment flex">
-        <div class="container mt-4 mb-4">
-            <div class="row justify-content-md-center">
-              <div class="col-md-12 col-lg-8">
-                <h1 class="h2 mb-4">Submit issue</h1>
-                <label>Describe the issue in detail</label>
-                <div class="form-group">
-                    <form action="/comment/<%= data._id %>" class="flex" method="POST">
-                   <textarea name="comment" id="editor">
-                       
-                   </textarea>
-                   <label class="form-label" for="customFile">Default file input example</label>
-                  
+        <div id="profile" class="flex">
+            
+            <div class="dropdown">
+                <div id="profile-img flex">
+                    <div><!-- arrow --></div>
+                    <img  src="<%=user.img%>">
                 </div>
-                <input type="submit" class="btn btn-primary" value="confirm" id="comment-button"/>
-    
-            </form>
+                <div class="dropdown-content">
+                  <a href="/profile">Profile</a>
+                  <a href="/logout">Log Out</a>
+                </div>
               </div>
+        
+        <div id="name-profile">
+            
+            <% if (user === null){ %>
+                <a href="/login">Log in</a>
+               <% }else{ %>
+                  <%= user.name %>
+               <% } %>
+               
+
+        </div>
+        </div>
+    </div>
+  <!--        -->
+ 
+    <div class="continer flex">
+
+        
+
+        <div id="ticket" class="flex">
+
+
+
+            <div id="profile" class="flex">
+
+              <div class="name-profile"> <%= data.user.name %></div>
+              <img src="<%= user.img %>" alt="">
+                
+
+               
+            </div> 
+
+
+            <div id="ticket-description-title" class="flex">
+
+            <div id="title-subject">
+                <%= data.subject %>
             </div>
-          </div>
-     </div>
 
-    <% } %>
+            <div id="description">
+                
+                <p><%= data.description %></p>
 
+            </div> 
 
+        </div>
+        </div> 
+
+        <% for (let comment of comments) { %>  
+        <div class="comments flex">
+
+            <div class="lancer-profile" class="flex">
+
+                <div class="lancer-name-profile"><%=comment.user.name%></div>
+                <img src="<%= comment.user.img%>" alt="">
+
+                <% if(user._id == data.user._id){%>
+                    <%if(data.status == 0){%>
+                    
+                    <form action="/ticket-accept/<%= comment.user._id %>?_method=put&tickteId=<%= data._id %>"  class="flex" method="POST" >
+                        <input type="submit" value="accept" class="btn">
+                     </form>
+                     <% } %>
+                     <%if(data.status == 1){%>
+                        <form action="/ticket-done/<%= comment.user._id %>?_method=put&tickteId=<%= data._id %>"  class="flex" method="POST" id="accept">
+                            <input type="submit" value="Done" class="btn">
+                         </form>
+                         <% } %>
+                    <%if((data.status == 2) && (data.status !== 3)){%>
+                        <br><br>
+                   <a href="/rateme" id="rateme-btn">Rate Me</a>
+                    <% } %>
+                    <% } %>  
+                     
+              
+                    
+               
+                
+           
+
+  
+  
+              </div> 
+
+              <div class="comment-description flex" >
+
+               
     
-
-
-
+                <div class="lancer-description">
+                    
+                    <p id=<%=comment._id%>></p>
+    
+                </div> 
+                
+            </div>
+       
+        </div>
+        <% } %>
+        
+        <% if((parseInt(user.type) === 1) || parseInt(data.status) == 1){%>
+            <div class="in-comment">
+               <form action="/comment/<%= data._id %>" class="flex" method="POST">
+                <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+                <input type="submit" value="Send" id="comment-button"/>
+               </form>
+            </div>
+           <% } %>
     </div>
 
-
-
-
-
-
-
-
-
-    <% var info = comments %>
-    <script>
-        var length = "<%= info.length %>";
-        for(var i =0; i<length;i++){
-            console.log("<%=info[%>" + i + "<%=]._id%>")
-        }
     
+
+     
+
+    <script>
+        console.log("hi im here")
+        var getComments = <%-JSON.stringify(comments)%>
+        console.log(getComments)
+        getComments.forEach(com=>{
+            if(com.description)
+            document.getElementById(com._id).innerHTML = com.description
+        })
     </script>
 
-
-
-
-
-
-
-
-
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
-<script src="./showTicket.js"></script>
+
+
+
+
 </html>

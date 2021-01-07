@@ -1,14 +1,10 @@
-
-  
-  .hide {
+.hide {
     display: none;
   }
-  
 .clear {
   float: none;
   clear: both;
 }
-
 .stars {
   width: 100px;
   unicode-bidi: bidi-override;
@@ -18,7 +14,6 @@
   margin-bottom: 9%;
   margin-top: -20px;
 }
-
 .stars > label {
   float: right;
   display: inline-block;
@@ -29,20 +24,28 @@
   cursor: pointer;
   color: #000;
 }
-
 .stars > label:hover,
 .stars > label:hover ~ label,
 .stars > input.radio-btn:checked ~ label {
   color: rgb(216, 151, 54);
 }
-
 /* Rate Me Button */
-#rate-me {
-  display: fixed;
-  background-color: red;
-
+.open-button {
+  color: rgb(0, 0, 0);
+  padding: 16px 20px;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed; /* or absolute */
+  top: 43%;
+  left: 31%;
+  background-color: #008891;
+  color: white;
+  border-radius: 16px;
+  width: 40%;
+  box-shadow: 0 0 5pt 2pt #D3D3D3;
+  border: none;
+  font-weight: bold;
 }
-
 /* The Popup Window */
 .form-popup {
   display: none;
@@ -52,14 +55,12 @@
     border: 3px solid #f1f1f1;
   z-index: 9;
 }
-
 /* Form Container */
 .form-container {
   max-width: 100%;
   padding: 10px;
   background-color: white;
 }
-
 /* Input Fields */
 .form-container input[type=text] {
   width: 90%;
@@ -73,7 +74,6 @@
   background-color: #ddd;
   outline: none;
 }
-
 /* Confirm Button */
 .form-container .btn {
   background-color: #4CAF50;
@@ -85,17 +85,14 @@
   margin-bottom:10px;
   opacity: 0.8;
 }
-
 /* Cancel Button */
 .form-container .cancel {
   background-color: red;
 }
-
 /* Buttons Hover*/
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
 }
-
 /* For Comment */
 .comm{
   display: inline-block;

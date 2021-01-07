@@ -1,15 +1,20 @@
+
+
+/* ==== Img Style ==== */
 .header img {
     float: left;
     width: 55px;
     height: 55px;
   }
+  
   /* ==== User Name Style ====  */
-.header h1 {
+  .header h1 {
     position: relative;
     top: 18px;
     bottom: 50px;
     left: 10px;
   }
+
 /* ==== NAV Button Style ==== */
 /* >>>>>>>>>> Left with Centralization */
 .button {
@@ -23,64 +28,27 @@
     font-size: 12px;
     margin: 10px 2px;
   }
+
   /* ==== NAV Button Hover ==== */
-.button:hover {
+  .button:hover {
     background-color: #b80000b9; 
         color: white;
       opacity: 1
 }
+
 /* Active Button */
 .button:active {
     background-color: #b80000b9; 
     color: white;
   }
-button:focus{
+
+  button:focus{
     background-color: #b80000b9; 
     color: white;
 }
+
 /* Hides The Content */
 .content {
     display: none;
 }
-
-body {
-  background: #0f3057
-}
-
-.form-control:focus {
-  box-shadow: none;
-  border-color: #0f3057
-}
-
-.profile-button {
-  background: #0f3057;
-  box-shadow: none;
-  border: none
-}
-
-.profile-button:hover {
-  background-color:#e7e7de;
-  color:#0f3057;
-}
-
-.profile-button:focus {
-  background: #0f3057;
-  box-shadow: none
-}
-
-.profile-button:active {
-  background: #0f3057;
-  box-shadow: none
-}
-
-.back:hover {
-  color: #0f3057;
-  cursor: pointer
-}
-.container{
- background-color:  #e7e7de;
- color: #0f3057;
-}
-
-
 
