@@ -54,7 +54,7 @@ body{
   }
   * {box-sizing: border-box;}
   body {font-family: Verdana, sans-serif;}
-  .mySlides {display: none; width: 50%; } img {vertical-align: middle;} /* Slideshow container */ .slideshow-container { justify-content: center; width: 100%; position: relative; margin: 0; height: 70vh; } .slider-img{ width: 100%; height: 100vh; max-width:100% ; min-height: 400px; max-height: 400px; }
+  .mySlides {display: none; width: 95%;} img {vertical-align: middle;} /* Slideshow container */ .slideshow-container { justify-content: center; width: 100%; position: relative; margin: 0; height: 70vh; } .slider-img{ width: 100%; height: 100vh; max-width:100% ; min-height: 400px; max-height:800px; }
   /* Caption text */
   .text {
     color: white;
