@@ -6,31 +6,65 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-weight: bold;
+    background-color: #E1F6FF;
 }
 body form {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: palegoldenrod;
     padding: 5%;
     width: 80%;
 }
-
 body form #tiket-d{
-    
     width: 100%;
     height: 500px;
     margin: 20px 0;
+    border-radius: 16px;
+    border: 1px solid rgb(255, 255, 255);
+    padding: 4.5px 10px;
+    box-shadow: 0 0 5pt #D3D3D3;
 }
-
 body form #label-img{
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    margin-top: 30px; 
 }
-
 body form #tiket-input-img{
     margin-bottom: 20px;
+    border-radius: 16px;
+    border: 1px solid rgb(255, 255, 255);
+    width: 30%;
+    padding: 4.5px 10px;
+    box-shadow: 0 0 5pt #D3D3D3;
 }
-
 body form #tiket-input-subject{
     margin-top: 10px;
+    border-radius: 16px;
+    border: 1px solid rgb(255, 255, 255);
+    width: 30%;
+    padding: 4.5px 10px;
+    box-shadow: 0 0 5pt #D3D3D3;
+}
+#browser{
+    border-radius: 16px;
+    border: 1px solid rgb(255, 255, 255);
+    width: 30%;
+    padding: 4.5px 10px;
+    box-shadow: 0 0 5pt #D3D3D3;
+}
+#tiket-button{
+    margin-top: 4%;
+    background-color: #008891;
+    color: white;
+    border-radius: 16px;
+    width: 30%;
+    padding: 7px 15px;
+    border: none;
+    box-shadow: 0 0 5pt 2pt #D3D3D3;
+    cursor: pointer;
+    opacity: 0.6;
+    font-weight: bold;
+}
+#tiket-button:hover{
+   opacity: 1;
 }

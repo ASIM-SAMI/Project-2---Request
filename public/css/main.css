@@ -7,14 +7,14 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     flex-direction: column;
-    background-color: #e7e7de;
+    background-color: white;
     align-items: center;
 }
 
 /* Header */
 
 body #header{
-  color: #e7e7de; 
+  color: white; 
   width: 100%;
   background-color: #0f3057;
   height: 10vh;
@@ -49,13 +49,13 @@ margin-right: 20px;
 width: 60px;
 height: 60px;
 border-radius: 100%;
-border: 2px solid #e7e7de;
+border: 2px solid white;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #e7e7de;
+    background-color: white;
     min-width: 140px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -72,7 +72,7 @@ border: 2px solid #e7e7de;
   
   .dropdown-content a:hover {
 background-color: #0f3057;
-color:#e7e7de;
+color:white;
 }
   
   .dropdown:hover .dropdown-content {
@@ -90,15 +90,14 @@ body #section{
     margin-top: 50px;
     width: 100%;
     height: 700px;
-    color: #e7e7de; 
+    color: white; 
 }
 body #section #section-menu{
     flex-direction: column;
     flex-grow: 1;
-    background-color:#0f3057;
     max-width: 200px;
     align-items: center;
-    
+    background-color: #0f3057;
 }
 
 body #section #section-menu .category{
@@ -109,18 +108,19 @@ body #section #section-menu .category{
     max-height: 5%;
     align-items: center;
     justify-content: center;
-    border: 2px solid #e7e7de;
+    border: 2px solid ;
+    background-color:#0f3057;
 }
 
 body #section #section-menu .category:hover{
-    background-color: #e7e7de;
+    background-color: white;
 }
 
 body #section #section-menu .category a{
     width: 100%;
     height: 100%;
     text-decoration: none;
-    color:#e7e7de;
+    color:white;
     padding-top: 10%;
 }
 
@@ -159,14 +159,15 @@ body #section #section-tikcets #btns-bar a{
 
 body #section #section-tikcets #btns-bar a:hover{
     color:#0f3057;
-    background-color: #e7e7de;
+    background-color: white;
 }
 body #section #show-tickets{
 width: 90%;
 flex-grow: 1;
-background-color: #e7e7de;
+background-color:white;
 justify-content: center;
 flex-wrap: wrap;
+
 }
 
 body #section #show-tickets #ticket-link{
@@ -178,10 +179,12 @@ width: 100%;
 body #section #show-tickets #ticket-card{
     margin: 20px;
     background-color: #284b75;
+    color: white;
+    border: 2px solid black;
 }
 
 body #section #show-tickets #ticket-card:hover{
-   border: 2px solid red;
+   border: 2px solid rgb(185, 1, 1);
    cursor: pointer;
 }
 
@@ -189,7 +192,7 @@ body #section #show-tickets #ticket-card #ticket-img{
  width: 45%;
  justify-content: center;
  align-items: center;
- background-color: red;
+ background-color: rgb(185, 1, 1);
  max-width: 150px;
  min-width: 130px;
 }
@@ -213,7 +216,7 @@ margin: 10px;
 body #section #show-tickets #ticket-info #card-subject{
     font-size: 1em;
     flex-grow: 2;
-    
+    font-weight: bold;
 }
 
 body #section #show-tickets #ticket-info #card-by{
@@ -257,4 +260,10 @@ body #section #show-tickets #ticket-info #card-time{
     display: inline-block;
   }
   
-  
+
+  .footer h4{
+    font-size: 1em;
+  }
+  .footer p{
+    font-size: 0.7em;
+  }

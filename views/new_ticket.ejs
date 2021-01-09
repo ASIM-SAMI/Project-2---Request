@@ -9,12 +9,10 @@
 <body class="flex">
     <form action="/new_ticket_tk" class="flex" method="POST">
     
-        <label for="subject" id="label-subject">Subject:</label>
-        <input type="text" name="subject" id="tiket-input-subject">
-        <textarea id="tiket-d" name="description" cols="50" rows="10"></textarea>
+        <input type="text" name="subject" id="tiket-input-subject" placeholder="Subject">
+        <textarea id="tiket-d" name="description" cols="50" rows="10" placeholder="Write Your Request"></textarea>
 
-        <label for="image" id="label-img" >Image:</label>
-        <input type="text" id="tiket-input-img" name="img">
+        <input type="text" id="tiket-input-img" name="img" placeholder="Image URL" >
         
         <label for="category" id="label-img" >choose category:</label>
         <input list="browsers" name="category" id="browser">

@@ -71,7 +71,7 @@
             <div id="profile" class="flex">
 
               <div class="name-profile"> <%= data.user.name %></div>
-              <img src="<%= user.img %>" alt="">
+              <img src="<%= data.user.img %>" alt="">
                 
 
                
@@ -101,7 +101,7 @@
                 <div class="lancer-name-profile"><%=comment.user.name%></div>
                 <img src="<%= comment.user.img%>" alt="">
 
-                <% if(user._id == data.user._id){%>
+                <!--<%# if(user._id == data.user._id){%>-->
                     <%if(data.status == 0){%>
                     
                     <form action="/ticket-accept/<%= comment.user._id %>?_method=put&tickteId=<%= data._id %>"  class="flex" method="POST" >
@@ -117,7 +117,7 @@
                         <br><br>
                    <a href="/rateme" id="rateme-btn">Rate Me</a>
                     <% } %>
-                    <% } %>  
+                    <!--<%# } %>  -->
                      
               
                     
@@ -155,7 +155,12 @@
     </div>
 
     
+   <!--------------------------Footer---------------------------->
+   <div class="footer">
+    <h4>Coded By Epsilon Team</h4>
+     <p> Manal & Asim & Njoud </p>
 
+   </div>
      
 
     <script>

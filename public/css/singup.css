@@ -19,7 +19,7 @@ body {
 }
 
 span.txt {
-    color: #00587a;
+    color: #0f3057;
     font-size: 140%;
 }
 
@@ -168,7 +168,7 @@ p.exist span {
     font-weight: bold;
 }
 .started {
-    background-color: #008891;
+    background-color: #0f3057;
     color: white;
     border-radius: 16px;
     width: 90%;

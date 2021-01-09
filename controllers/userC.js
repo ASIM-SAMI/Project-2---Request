@@ -128,7 +128,6 @@ router.get('/main' , (req,res) =>{
   if(req.query.myorder){
     Ticket.find({user: req.session.userId}).sort({'updatedAt': -1}).populate('user').exec()
     .then((allTicket)=>{
-      console.log("aaaa",user.img)
       User.findById(req.session.userId)
 
       .then((user)=>{
@@ -146,7 +145,7 @@ router.get('/main' , (req,res) =>{
 
           .then((user)=>{
     
-            res.render('main' , {data: allTicket , user: user , search: true} )
+            res.render('main' , {data: allTicket , user: user , search: false} )
     
           }).catch(err=> {console.log(err)})
 

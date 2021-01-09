@@ -27,14 +27,14 @@ body{
   }
   .header .btn-header{
     padding: 5px ;
-    background-color: #ffffff;
+    background-color: white;
     flex-grow: 3;
     justify-content: flex-end;
   }
   .h-btn {
-  background-color:#008891; 
+  background-color:#0f3057; 
   border-radius: 16px;
-  border: 3px solid  #008891;
+  border: 3px solid  #0f3057;
   color: white;
   padding: 5px 9px;
   text-align: center;
@@ -46,17 +46,18 @@ body{
   cursor: pointer;
   font-weight: bolder;
   box-shadow: 0 0 5pt 2pt #D3D3D3;
+  width: 150px;
   }
   .h-btn:hover {
     background-color:white;
-    color:#008891;
+    color:#0f3057;
   }
   * {box-sizing: border-box;}
   body {font-family: Verdana, sans-serif;}
   .mySlides {display: none; width: 50%; } img {vertical-align: middle;} /* Slideshow container */ .slideshow-container { justify-content: center; width: 100%; position: relative; margin: 0; height: 70vh; } .slider-img{ width: 100%; height: 100vh; max-width:100% ; min-height: 400px; max-height: 400px; }
   /* Caption text */
   .text {
-    color: #f2f2f2;
+    color: white;
     font-size: 15px;
     padding: 8px 12px;
     position: absolute;
@@ -66,7 +67,7 @@ body{
   }
   /* Number text (1/3 etc) */
   .numbertext {
-    color: #f2f2f2;
+    color: white;
     font-size: 12px;
     padding: 8px 12px;
     position: absolute;
@@ -116,10 +117,10 @@ body{
     font-weight: bolder;
   }
   .c-btn {
-    background-color:#008891;
+    background-color:#0f3057;
     border-radius: 16px;
-      border: 3px solid  #008891;
-      color: #e7e7de;
+      border: 3px solid  #0f3057;
+      color: white;
       padding: 5px 9px;
       text-align: center;
       text-decoration: none;
@@ -131,7 +132,7 @@ body{
       }
     .c-btn:hover {
         background-color:white;
-        color:#008891;
+        color:#0f3057;
       }
   .body-container{
           justify-content: center;
@@ -159,12 +160,13 @@ body{
     margin-right: 20px;
     height: 500px;
     max-height:500px ;
+  
   }
   .header {
     padding: 60px;
     text-align: center;
-    background: #ffffff;
-    color: #00587a;
+    background: white;
+    color: #0f3057;
     font-size: 30px;
   }
   .footer{
@@ -175,12 +177,17 @@ body{
     color: white;
     text-align: center;
   
-    background: #00587a;
+    background: #0f3057;
     color: #ffffff;
     font-size: 30px;
   
   }
   
   .footer h4{
-    padding-top: 200px;
+    color:white;
+    font-size: 1em;
+  }
+  .footer p{
+    color:white;
+    font-size: 0.7em;
   }

@@ -4,7 +4,10 @@ const Schema = mongoose.Schema;
 
 const TicketSchema = new Schema({
   subject: String ,
-  img: String,
+  img:  {
+    type: String,
+    default: "https://image.freepik.com/free-vector/new-post-neon-signs-style-text_118419-1184.jpg"
+  } ,
   description: String,
   category : String ,
   status : {
